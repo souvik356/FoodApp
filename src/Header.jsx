@@ -1,16 +1,20 @@
-import { useState } from "react"
+import { Link } from "react-router-dom"
 import SearchBar from "./SearchBar"
+import foodology from './assets/Foodology.png'
+import userIcon from './assets/User.png'
 
 const Header = ()=>{
  
   return(
     <>
-      <div className='nav-bar'>
-        <img className='nav-logo' src='https://th.bing.com/th/id/OIP.a9D49yunB3aSNAu62ZmE2gHaHa?rs=1&pid=ImgDetMain'/>
+      <div className='w-full h-22 flex items-center justify-between bg-amber-200'>
+        <Link to='/recipie'>
+           <img className='w-24' src={foodology}/>
+        </Link>
         <div> 
             <SearchBar/>
         </div>
-        <img className='user-logo' src='https://th.bing.com/th/id/OIP.OmJICjo6Xt-Ay8oWfxkGNQHaHa?rs=1&pid=ImgDetMainD' />
+        <img className='user-logo' src={userIcon} />
       </div>
     </>
   )

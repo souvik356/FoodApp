@@ -1,8 +1,5 @@
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+@import "tailwindcss";
+
 .nav-logo{
   width: 100px;
   height: 80px;

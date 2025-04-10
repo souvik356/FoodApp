@@ -1,11 +1,11 @@
 const RecipieCard = ({name,image})=>{
   return(
     <>
-      <div className='recipie-Card'>
-          <div className='recipie-div'>
-            <img className='recipie-img' src={image} />
+      <div className='w-[10rem] h-[14rem] shadow-xl mb-6 rounded '>
+          <div className=''>
+            <img className='w-full h-full rounded' src={image} />
           </div>
-          <h3 className='recipie-name'>{name}</h3>
+          <h3 className='text-center text-sm overflow-hidden mt-1 mb-1'>{name}</h3>
       </div>
     </>
   )
