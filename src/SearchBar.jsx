@@ -3,6 +3,7 @@ import { CiSearch } from "react-icons/ci";
 import { TypeAnimation } from "react-type-animation";
 import { FaBowlFood } from "react-icons/fa6";
 import { HiTrendingUp } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const SearchBar = () => {
   const [recipie, setRecipie] = useState("");
@@ -54,7 +55,7 @@ const SearchBar = () => {
             type="text"
             className=" outline-none w-full h-full"
             onFocus={() => setShowRecommendationBox(true)}
-            onBlur={() => setShowRecommendationBox(false)}
+            onBlur={() => setTimeout(()=>setShowRecommendationBox(false),200)}
           />
         </div>
         {showRecommendationBox && (
@@ -62,8 +63,7 @@ const SearchBar = () => {
             {data.length === 0
               ? "No Item found"
               : data.map((data) => (
-                <>
-                <div className="flex items-center justify-between cursor-pointer hover:bg-gray-200 p-1.5 rounded-2xl">
+                <Link to={`/recipie/${data.id}`} key={data.id} className="flex bg-red-400 items-center justify-between cursor-pointer hover:bg-gray-200 p-1.5 rounded-2xl">
                   <div className="flex items-center gap-4">
                     <div>
                       <FaBowlFood size={25} color="bisque-500"/>
@@ -76,8 +76,7 @@ const SearchBar = () => {
                   <div>
                       <HiTrendingUp size={25} />
                   </div>
-                </div>
-                </>
+                </Link>
                 ))}
           </div>
         )}

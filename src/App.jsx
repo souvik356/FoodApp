@@ -1,12 +1,10 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Header from './Header'
 import Body from './Body'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import MainBody from './MainBody'
-import LoginSignUp from './assets/LoginSignUp'
+import LoginSignUp from './LoginSignUp'
+import RecipiePage from './RecipiePage'
+import ProtectedRoute from './ProtectedRoute'
 
 const appRouter = createBrowserRouter([
   {
@@ -18,8 +16,12 @@ const appRouter = createBrowserRouter([
         element : <LoginSignUp/>
       },
       {
-        path:'/recipie',
-        element : <Body/>
+        path:'recipie',
+        element : <ProtectedRoute><Body/></ProtectedRoute>
+      },
+      {
+        path:'recipie/:id',
+        element : <ProtectedRoute><RecipiePage /></ProtectedRoute>
       }
     ]
   },
